@@ -1,70 +1,70 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import styles from './LogIn.css';
 
 class LogIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: '',
-    }
-  }
-
-  handleError(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
   }
 
   postLogin(e) {
+    console.log('logging in')
     return fetch('/user/login', {
       method: 'POST',
       headers: {
         'content-type': 'application/JSON'
       },
       body: JSON.stringify({
-        loginUsername: this.state.username,
+        loginUsername: this.state.loginUsername,
         loginPassword: this.state.loginPassword
       })
     })
-    .then(handleError)
+    .then(result => result.json())
     .then( (data) => {
-      localStorage.setItem('token', data)
-    })
-    .then(() => {
-      browserHistory.push('/home')
+      if (!data.failed) {
+        browserHistory.push('/home')
+        localStorage.setItem('token', data)
+      } else {
+        console.log('nope')
+      }
+      console.log(data)
     })
   }
 
   trackLoginInput(e) {
-    console.log(e)
+    let inputArray = e.target.parentElement.childNodes
     this.setState({
-      username: e.target.value,
-      password: e.target.value,
+      loginUsername: inputArray[0].value,
+      loginPassword: inputArray[1].value,
     });
   }
 
   render() {
     return (
-      <div className={styles['']}>
-        <div className="log-in">
-          <input
-            type="text"
-            placeholder="username"
-            value={this.state.username}
-            onChange={this.trackLoginInput.bind(this)}
-          />
-          <input
-            type="text"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.trackLoginInput.bind(this)}
-          />
+      <div className="login_container">
+        <h1>RepDotBody</h1>
+        <br/>
+        <br/>
+        <br/>
+        <div className="login-flex-parent">
+          <div className="log-in">
+            <input
+              type="text"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.trackLoginInput.bind(this)}
+            />
+            <input
+              type="text"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.trackLoginInput.bind(this)}
+            />
+          </div>
+
+          <button><Link className="signup-button" to="/create"> Sign Up </Link></button>
+          <button><Link className="login-button" to="/home"> Log In </Link></button>
         </div>
-      <button><Link className="signup-button" to="/create"> Sign Up </Link></button>
-      <button><Link className="login-button" to="/home"> Log In </Link></button>
       </div>
     );
   }

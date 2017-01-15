@@ -47,7 +47,7 @@
   \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _reactRouter=__webpack_require__(/*! react-router */ 178);var _routes=__webpack_require__(/*! ./routes */ 241);var _routes2=_interopRequireDefault(_routes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
+	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _reactRouter=__webpack_require__(/*! react-router */ 178);var _routes=__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./routes\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));var _routes2=_interopRequireDefault(_routes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
 	_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router,{routes:_routes2.default,history:_reactRouter.browserHistory}),document.querySelector('#root-container'));
 
 /***/ },
@@ -8604,6 +8604,7 @@
 
 	'use strict';exports.__esModule=true;var _createHashHistory=__webpack_require__(/*! history/lib/createHashHistory */ 188);var _createHashHistory2=_interopRequireDefault(_createHashHistory);var _createRouterHistory=__webpack_require__(/*! ./createRouterHistory */ 239);var _createRouterHistory2=_interopRequireDefault(_createRouterHistory);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}exports.default=(0,_createRouterHistory2.default)(_createHashHistory2.default);module.exports=exports['default'];
 
+<<<<<<< HEAD
 /***/ },
 /* 241 */
 /*!***********************!*\
@@ -8742,6 +8743,8 @@
 
 	// removed by extract-text-webpack-plugin
 
+=======
+>>>>>>> master
 /***/ }
 /******/ ]);
 //# sourceMappingURL=main.js.map

@@ -8,7 +8,6 @@ import Results from       './components/Results/Results.jsx';
 import Main from          './components/Main/Main.jsx';
 import UpdateUser from    './components/UpdateUser/UpdateUser.jsx';
 
-
 module.exports = (
   <Route path='/' component={App}>
     <IndexRoute component={LogIn} />

@@ -27,7 +27,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         {this.props.children && React.cloneElement(this.props.children, {
           officials: this.state.officials,
           // officialsList: this.officialsList.bind(this),

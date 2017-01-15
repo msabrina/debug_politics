@@ -42,6 +42,7 @@ class LogIn extends Component {
   render() {
     return (
       <div className="login_container">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700"/>
         <h1>RepDotBody</h1>
         <br/>
         <br/>
@@ -51,13 +52,11 @@ class LogIn extends Component {
             <input
               type="text"
               placeholder="username"
-              value={this.state.username}
               onChange={this.trackLoginInput.bind(this)}
             />
             <input
-              type="text"
+              type="password"
               placeholder="password"
-              value={this.state.password}
               onChange={this.trackLoginInput.bind(this)}
             />
           </div>

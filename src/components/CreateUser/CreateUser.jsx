@@ -57,25 +57,25 @@ class CreateUser extends Component {
           <input
             type="text"
             name="signupUsername"
-            placeholder="signupUsername"
+            placeholder="Username"
             onChange={this.updateInputFields.bind(this)} />
           <p>Password:</p>
           <input
             type="password"
             name="signupPassword"
-            placeholder="signupPassword"
+            placeholder="Password"
             onChange={this.updateInputFields.bind(this)} />
           <p>Confirm Password:</p>
           <input
             type="password"
             name="signupConfirm"
-            placeholder="signupConfirm"
+            placeholder="Confirm Password"
             onChange={this.updateInputFields.bind(this)} />
           <address>Address:</address>
           <input
             type="text"
             name="address"
-            placeholder="address"
+            placeholder="Address"
             onChange={this.updateInputFields.bind(this)} />
         </div>
       <Link className='create' to="/home"><button onClick={this.createUser.bind(this)}> Submit </button></Link>

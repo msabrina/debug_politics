@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import NewsArticles from './NewsArticles/NewsArticles.jsx';
+import Official from './Official/Official.jsx';
 import styles from './Home.css';
 
 class Home extends Component {
@@ -14,7 +15,7 @@ class Home extends Component {
 
   officialsList() {
     return this.props.officials.map((official, i) => {
-      <Home
+      <Official
         key={i}
         official={official}
         name={official.name}
@@ -31,7 +32,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className={styles['']}>
+      <div className='official'>
         <div className="official-list" onClick={() => this.props.clickMethod(props.official)}>
         <h1 >This is where the official list will live</h1>
         {this.officialsList()}

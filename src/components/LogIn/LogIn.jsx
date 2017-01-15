@@ -11,8 +11,15 @@ class LogIn extends Component {
     }
   }
 
+  handleError(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+  }
+
   postLogin(e) {
-    return fetch('localhost:3000/user/login', {
+    return fetch('/user/login', {
       method: 'POST',
       headers: {
         'content-type': 'application/JSON'
@@ -22,8 +29,12 @@ class LogIn extends Component {
         loginPassword: this.state.loginPassword
       })
     })
+    .then(handleError)
     .then( (data) => {
       localStorage.setItem('token', data)
+    })
+    .then(() => {
+      browserHistory.push('/home')
     })
   }
 
